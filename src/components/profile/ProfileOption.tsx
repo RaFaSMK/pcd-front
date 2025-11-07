@@ -21,7 +21,9 @@ export const ProfileOption = ({
       onClick={onClick}
       className="p-4 flex items-center gap-4 cursor-pointer hover:shadow-lg transition-all border border-border group"
     >
-      <div className={`w-14 h-14 rounded-xl ${iconBgColor} flex items-center justify-center flex-shrink-0`}>
+      <div
+        className={`w-14 h-14 rounded-xl ${iconBgColor} flex items-center justify-center shrink-0`}
+      >
         <Icon className="w-7 h-7 text-primary" />
       </div>
       <div className="flex-1">

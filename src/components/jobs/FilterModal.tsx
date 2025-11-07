@@ -1,11 +1,16 @@
 import { useState } from "react";
-import { X, ChevronLeft } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Slider } from "@/components/ui/slider";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface FilterModalProps {
   open: boolean;
@@ -19,7 +24,11 @@ export interface JobFilters {
   salaryRange: [number, number];
 }
 
-export const FilterModal = ({ open, onClose, onApplyFilters }: FilterModalProps) => {
+export const FilterModal = ({
+  open,
+  onClose,
+  onApplyFilters,
+}: FilterModalProps) => {
   const [filters, setFilters] = useState<JobFilters>({
     workModes: [],
     locations: [],
@@ -44,7 +53,10 @@ export const FilterModal = ({ open, onClose, onApplyFilters }: FilterModalProps)
   };
 
   const handleAddLocation = () => {
-    if (locationInput.trim() && !filters.locations.includes(locationInput.trim())) {
+    if (
+      locationInput.trim() &&
+      !filters.locations.includes(locationInput.trim())
+    ) {
       setFilters((prev) => ({
         ...prev,
         locations: [...prev.locations, locationInput.trim()],
@@ -94,7 +106,10 @@ export const FilterModal = ({ open, onClose, onApplyFilters }: FilterModalProps)
                     checked={filters.workModes.includes(option.id)}
                     onCheckedChange={() => handleWorkModeToggle(option.id)}
                   />
-                  <Label htmlFor={option.id} className="text-base cursor-pointer">
+                  <Label
+                    htmlFor={option.id}
+                    className="text-base cursor-pointer"
+                  >
                     {option.label}
                   </Label>
                 </div>
@@ -141,7 +156,10 @@ export const FilterModal = ({ open, onClose, onApplyFilters }: FilterModalProps)
               <Slider
                 value={filters.salaryRange}
                 onValueChange={(value) =>
-                  setFilters((prev) => ({ ...prev, salaryRange: value as [number, number] }))
+                  setFilters((prev) => ({
+                    ...prev,
+                    salaryRange: value as [number, number],
+                  }))
                 }
                 min={700}
                 max={10000}

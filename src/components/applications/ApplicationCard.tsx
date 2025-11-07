@@ -1,7 +1,8 @@
-import { MapPin, Briefcase, DollarSign, Calendar } from "lucide-react";
+import { MapPin, Briefcase, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import Image from "next/image";
 
 interface ApplicationCardProps {
   jobTitle: string;
@@ -35,7 +36,9 @@ export const ApplicationCard = ({
       <div className="flex items-start justify-between gap-4 mb-4">
         <div className="flex-1">
           <h3 className="text-xl font-bold text-primary mb-2">{jobTitle}</h3>
-          <p className="text-base text-muted-foreground font-medium mb-3">{company}</p>
+          <p className="text-base text-muted-foreground font-medium mb-3">
+            {company}
+          </p>
 
           <div className="mb-4">
             <div className="flex justify-between items-center mb-2">
@@ -68,7 +71,8 @@ export const ApplicationCard = ({
               <div className="flex items-center gap-1">
                 <DollarSign className="w-4 h-4" />
                 <span>
-                  R$ {salaryRange.min.toLocaleString()} - R$ {salaryRange.max.toLocaleString()}
+                  R$ {salaryRange.min.toLocaleString()} - R${" "}
+                  {salaryRange.max.toLocaleString()}
                 </span>
               </div>
             )}
@@ -76,9 +80,13 @@ export const ApplicationCard = ({
         </div>
 
         {logoUrl && (
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <div className="w-24 h-24 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
-              <img src={logoUrl} alt={`Logo ${company}`} className="w-full h-full object-cover" />
+              <Image
+                src={logoUrl}
+                alt={`Logo ${company}`}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         )}
@@ -89,7 +97,11 @@ export const ApplicationCard = ({
       </div>
 
       <div className="flex gap-3">
-        <Button variant="outline" onClick={onViewDetails} className="flex-1 font-semibold">
+        <Button
+          variant="outline"
+          onClick={onViewDetails}
+          className="flex-1 font-semibold"
+        >
           Ver Detalhes da Vaga
         </Button>
         {onCancel && (

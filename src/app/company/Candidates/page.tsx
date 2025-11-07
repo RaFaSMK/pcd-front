@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { Header } from "@/components/layout/Header";
@@ -11,7 +10,6 @@ import { Users, Star, MapPin, Briefcase, ChevronLeft } from "lucide-react";
 
 const Candidates = () => {
   const router = useRouter();
-  const { jobId } = useParams();
   const [activeTab, setActiveTab] = useState<"todos" | "recentes">("todos");
 
   const candidates = [

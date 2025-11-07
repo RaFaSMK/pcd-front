@@ -19,7 +19,9 @@ export const StatsCard = ({
   return (
     <Card className="p-6 bg-card border border-border">
       <div className="flex items-center gap-4">
-        <div className={`w-12 h-12 rounded-lg ${iconBgColor} flex items-center justify-center flex-shrink-0`}>
+        <div
+          className={`w-12 h-12 rounded-lg ${iconBgColor} flex items-center justify-center shrink-0`}
+        >
           <Icon className={`w-6 h-6 ${iconColor}`} />
         </div>
         <div>

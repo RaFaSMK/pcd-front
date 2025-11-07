@@ -6,40 +6,43 @@ import { Minus, Plus, Circle, Volume2 } from "lucide-react";
 
 export const AccessibilityBar = () => {
   // Inicializa o estado com valores padrão (ex: 100 e false).
-  // Não lemos o localStorage aqui.
-  const [fontSize, setFontSize] = useState(100);
-  const [highContrast, setHighContrast] = useState(false);
-
-  // Este useEffect roda APENAS no cliente, após a montagem.
-  // Ele é responsável por hidratar o estado com os valores do localStorage.
-  useEffect(() => {
-    const savedFontSize = localStorage.getItem('fontSize');
-    if (savedFontSize) {
-      setFontSize(parseInt(savedFontSize));
+  // Lê o localStorage de forma preguiçosa no inicializador do useState para evitar setState em efeito.
+  const [fontSize, setFontSize] = useState<number>(() => {
+    try {
+      if (typeof window === "undefined") return 100;
+      const saved = localStorage.getItem("fontSize");
+      return saved ? parseInt(saved) : 100;
+    } catch {
+      return 100;
     }
+  });
 
-    const savedHighContrast = localStorage.getItem('highContrast');
-    if (savedHighContrast) {
-      setHighContrast(savedHighContrast === 'true');
+  const [highContrast, setHighContrast] = useState<boolean>(() => {
+    try {
+      if (typeof window === "undefined") return false;
+      const saved = localStorage.getItem("highContrast");
+      return saved ? saved === "true" : false;
+    } catch {
+      return false;
     }
-  }, []); // O array vazio [] garante que isso rode apenas uma vez na montagem
+  });
 
   // Este useEffect aplica o tamanho da fonte e salva no localStorage
   // sempre que o estado 'fontSize' mudar.
   useEffect(() => {
     document.documentElement.style.fontSize = `${fontSize}%`;
-    localStorage.setItem('fontSize', fontSize.toString());
+    localStorage.setItem("fontSize", fontSize.toString());
   }, [fontSize]);
 
   // Este useEffect aplica o alto contraste e salva no localStorage
   // sempre que o estado 'highContrast' mudar.
   useEffect(() => {
     if (highContrast) {
-      document.documentElement.classList.add('high-contrast');
+      document.documentElement.classList.add("high-contrast");
     } else {
-      document.documentElement.classList.remove('high-contrast');
+      document.documentElement.classList.remove("high-contrast");
     }
-    localStorage.setItem('highContrast', highContrast.toString());
+    localStorage.setItem("highContrast", highContrast.toString());
   }, [highContrast]);
 
   const increaseFontSize = () => {
@@ -62,7 +65,7 @@ export const AccessibilityBar = () => {
     <div className="bg-primary text-primary-foreground py-2 px-4">
       <div className="container mx-auto flex items-center justify-between">
         <span className="text-sm font-medium">Acessibilidade:</span>
-        
+
         <div className="flex items-center gap-3">
           <Button
             variant="ghost"
@@ -93,7 +96,9 @@ export const AccessibilityBar = () => {
             className="text-primary-foreground hover:bg-primary-hover h-8 gap-1"
             aria-label="Alternar alto contraste"
           >
-            <Circle className={`w-4 h-4 ${highContrast ? 'fill-current' : ''}`} />
+            <Circle
+              className={`w-4 h-4 ${highContrast ? "fill-current" : ""}`}
+            />
             <span className="text-xs">Contraste</span>
           </Button>
 

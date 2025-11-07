@@ -1,4 +1,4 @@
-import { MapPin, GraduationCap, Accessibility, Star } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -65,15 +65,25 @@ export const CandidateCard = ({
           <div className="flex items-start justify-between mb-2">
             <div>
               <h3 className="text-lg font-bold text-primary">{name}</h3>
-              <p className="text-sm text-muted-foreground font-medium">{position}</p>
+              <p className="text-sm text-muted-foreground font-medium">
+                {position}
+              </p>
             </div>
             {onToggleFavorite && (
               <button
                 onClick={onToggleFavorite}
                 className="text-muted-foreground hover:text-warning transition-colors"
-                aria-label={isFavorite ? "Remover dos favoritos" : "Adicionar aos favoritos"}
+                aria-label={
+                  isFavorite
+                    ? "Remover dos favoritos"
+                    : "Adicionar aos favoritos"
+                }
               >
-                <Star className={`w-6 h-6 ${isFavorite ? "fill-warning text-warning" : ""}`} />
+                <Star
+                  className={`w-6 h-6 ${
+                    isFavorite ? "fill-warning text-warning" : ""
+                  }`}
+                />
               </button>
             )}
           </div>
@@ -100,7 +110,9 @@ export const CandidateCard = ({
         </div>
         <div className="col-span-3">
           <p className="text-muted-foreground mb-1">Candidatura</p>
-          <p className="font-semibold text-foreground">Há {appliedDaysAgo} dia{appliedDaysAgo > 1 ? 's' : ''}</p>
+          <p className="font-semibold text-foreground">
+            Há {appliedDaysAgo} dia{appliedDaysAgo > 1 ? "s" : ""}
+          </p>
         </div>
       </div>
 
@@ -135,15 +147,27 @@ export const CandidateCard = ({
       )}
 
       <div className="mb-4">
-        <p className="text-sm text-muted-foreground mb-1 font-semibold">Resumo:</p>
+        <p className="text-sm text-muted-foreground mb-1 font-semibold">
+          Resumo:
+        </p>
         <p className="text-sm text-foreground line-clamp-3">{resume}</p>
       </div>
 
       <div className="flex gap-2">
-        <Button variant="outline" size="sm" onClick={onViewProfile} className="flex-1">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={onViewProfile}
+          className="flex-1"
+        >
           Ver Currículo
         </Button>
-        <Button variant="outline" size="sm" onClick={onSendMessage} className="flex-1">
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={onSendMessage}
+          className="flex-1"
+        >
           Enviar Mensagem
         </Button>
         <Button variant="destructive" size="sm" onClick={onReject}>
