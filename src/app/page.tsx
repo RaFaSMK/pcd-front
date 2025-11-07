@@ -1,65 +1,123 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Users, Briefcase, Heart } from "lucide-react";
 
-export default function Home() {
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <div className="bg-linear-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground">
+        <div className="container mx-auto px-4 py-20">
+          <div className="flex items-center justify-center mb-8">
+            <div className="w-20 h-20 rounded-full bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-12 h-12"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+          </div>
+          
+          <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
+            EQualy
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          
+          <p className="text-xl md:text-2xl text-center mb-12 opacity-95 max-w-3xl mx-auto">
+            Plataforma acessível e inclusiva conectando talentos PCD às melhores oportunidades
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              asChild
+              size="lg"
+              variant={null}
+              className="bg-primary-foreground border-2 border-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <Link href={"auth/LoginPCD"}>
+                Sou Candidato
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+            
+            <Button
+              asChild
+              variant={null}
+              size="lg"
+              className="bg-primary-foreground border-2 border-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
             >
-              Learning
-            </a>{" "}
-            center.
+              <Link href={"auth/LoginEmpresa"}>
+                Sou Empresa
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Features Section */}
+      <div className="container mx-auto px-4 py-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-foreground">
+          Por que escolher a EQualy?
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-card rounded-xl p-8 shadow-md border border-border">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <Users className="w-7 h-7 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-foreground">
+              Inclusão Real
+            </h3>
+            <p className="text-muted-foreground">
+              Conectamos empresas comprometidas com a diversidade a profissionais PCD qualificados
+            </p>
+          </div>
+
+          <div className="bg-card rounded-xl p-8 shadow-md border border-border">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <Briefcase className="w-7 h-7 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-foreground">
+              Oportunidades Reais
+            </h3>
+            <p className="text-muted-foreground">
+              Vagas exclusivas pensadas para valorizar o potencial de cada profissional
+            </p>
+          </div>
+
+          <div className="bg-card rounded-xl p-8 shadow-md border border-border">
+            <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <Heart className="w-7 h-7 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold mb-4 text-foreground">
+              Acessibilidade Total
+            </h3>
+            <p className="text-muted-foreground">
+              Plataforma desenvolvida com recursos de acessibilidade para todos os usuários
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-primary text-primary-foreground py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm font-medium mb-2">
+            © 2025 EQualy - Plataforma acessível e inclusiva
+          </p>
+          <p className="text-xs opacity-90">
+            Comprometidos com a acessibilidade e inclusão no mercado de trabalho
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </footer>
     </div>
   );
-}
+};
+
+export default Index;
