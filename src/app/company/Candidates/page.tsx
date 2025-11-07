@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { StatsCard } from "@/components/company/StatsCard";
 import { CandidateCard } from "@/components/company/CandidateCard";
 import { Button } from "@/components/ui/button";
@@ -10,7 +10,7 @@ import { Card } from "@/components/ui/card";
 import { Users, Star, MapPin, Briefcase, ChevronLeft } from "lucide-react";
 
 const Candidates = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { jobId } = useParams();
   const [activeTab, setActiveTab] = useState<"todos" | "recentes">("todos");
 
@@ -78,19 +78,23 @@ const Candidates = () => {
       <main className="flex-1 container mx-auto px-4 py-8">
         <Button
           variant="ghost"
-          onClick={() => navigate("/empresa/vagas")}
+          onClick={() => router.push("/company/jobs")}
           className="mb-4"
         >
           <ChevronLeft className="w-4 h-4 mr-2" />
           Voltar para Minhas Vagas
         </Button>
 
-        <h1 className="text-4xl font-bold text-primary text-center mb-8">VAGAS</h1>
+        <h1 className="text-4xl font-bold text-primary text-center mb-8">
+          VAGAS
+        </h1>
 
         <Card className="p-6 mb-8">
           <div className="flex items-start justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-2">Desenvolvedor Front-end</h2>
+              <h2 className="text-2xl font-bold text-primary mb-2">
+                Desenvolvedor Front-end
+              </h2>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <span className="flex items-center gap-1">
                   <MapPin className="w-4 h-4" />
@@ -107,7 +111,9 @@ const Candidates = () => {
         </Card>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">Estatísticas desta Vaga</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">
+            Estatísticas desta Vaga
+          </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <StatsCard
               icon={Users}
@@ -157,8 +163,6 @@ const Candidates = () => {
           ))}
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

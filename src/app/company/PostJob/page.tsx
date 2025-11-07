@@ -1,19 +1,24 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FormSection } from "@/components/forms/FormSection";
 import { Card } from "@/components/ui/card";
 
 const PostJob = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [formData, setFormData] = useState({
     title: "",
     area: "",
@@ -74,7 +79,7 @@ const PostJob = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    navigate("/empresa/vagas");
+    router.push("/company/Jobs");
   };
 
   return (
@@ -83,12 +88,18 @@ const PostJob = () => {
       <Header variant="company" companyName="Irroba E-Commerce" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-primary text-center mb-8">POSTAR</h1>
+        <h1 className="text-4xl font-bold text-primary text-center mb-8">
+          POSTAR
+        </h1>
 
         <Card className="max-w-3xl mx-auto p-8">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-primary mb-2">Cadastrar Nova Vaga</h2>
-            <p className="text-muted-foreground">Preencha os dados da vaga para atrair os melhores talentos</p>
+            <h2 className="text-2xl font-bold text-primary mb-2">
+              Cadastrar Nova Vaga
+            </h2>
+            <p className="text-muted-foreground">
+              Preencha os dados da vaga para atrair os melhores talentos
+            </p>
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -100,7 +111,9 @@ const PostJob = () => {
                     id="title"
                     placeholder="Ex: Desenvolvedor Front-end"
                     value={formData.title}
-                    onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, title: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -110,14 +123,18 @@ const PostJob = () => {
                     <Label htmlFor="area">Área *</Label>
                     <Select
                       value={formData.area}
-                      onValueChange={(value) => setFormData({ ...formData, area: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, area: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="tecnologia">Tecnologia</SelectItem>
-                        <SelectItem value="administrativo">Administrativo</SelectItem>
+                        <SelectItem value="administrativo">
+                          Administrativo
+                        </SelectItem>
                         <SelectItem value="comercial">Comercial</SelectItem>
                         <SelectItem value="operacional">Operacional</SelectItem>
                       </SelectContent>
@@ -127,7 +144,9 @@ const PostJob = () => {
                     <Label htmlFor="level">Nível *</Label>
                     <Select
                       value={formData.level}
-                      onValueChange={(value) => setFormData({ ...formData, level: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, level: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
@@ -147,7 +166,9 @@ const PostJob = () => {
                     id="description"
                     placeholder="Descreva as principais responsabilidades e atividades do cargo"
                     value={formData.description}
-                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, description: e.target.value })
+                    }
                     className="min-h-32"
                     required
                   />
@@ -159,7 +180,9 @@ const PostJob = () => {
                     id="requirements"
                     placeholder="Liste os requisitos necessários para a vaga"
                     value={formData.requirements}
-                    onChange={(e) => setFormData({ ...formData, requirements: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, requirements: e.target.value })
+                    }
                     className="min-h-32"
                     required
                   />
@@ -171,7 +194,12 @@ const PostJob = () => {
                     id="differentials"
                     placeholder="Liste os diferenciais desejados (opcional)"
                     value={formData.differentials}
-                    onChange={(e) => setFormData({ ...formData, differentials: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        differentials: e.target.value,
+                      })
+                    }
                   />
                 </div>
               </div>
@@ -184,7 +212,9 @@ const PostJob = () => {
                     <Label htmlFor="contractType">Tipo de Contrato *</Label>
                     <Select
                       value={formData.contractType}
-                      onValueChange={(value) => setFormData({ ...formData, contractType: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, contractType: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
@@ -200,7 +230,9 @@ const PostJob = () => {
                     <Label htmlFor="workMode">Regime de Trabalho *</Label>
                     <Select
                       value={formData.workMode}
-                      onValueChange={(value) => setFormData({ ...formData, workMode: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, workMode: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
@@ -219,7 +251,9 @@ const PostJob = () => {
                     <Label htmlFor="workSchedule">Jornada de Trabalho *</Label>
                     <Select
                       value={formData.workSchedule}
-                      onValueChange={(value) => setFormData({ ...formData, workSchedule: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, workSchedule: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
@@ -237,7 +271,12 @@ const PostJob = () => {
                       id="salaryRange"
                       placeholder="Ex: R$ 3.000,00 até R$ 5.000,00"
                       value={formData.salaryRange}
-                      onChange={(e) => setFormData({ ...formData, salaryRange: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          salaryRange: e.target.value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -252,7 +291,10 @@ const PostJob = () => {
                           checked={formData.benefits.includes(benefit)}
                           onCheckedChange={() => handleBenefitToggle(benefit)}
                         />
-                        <Label htmlFor={benefit} className="font-normal cursor-pointer">
+                        <Label
+                          htmlFor={benefit}
+                          className="font-normal cursor-pointer"
+                        >
                           {benefit}
                         </Label>
                       </div>
@@ -269,7 +311,9 @@ const PostJob = () => {
                     <Label htmlFor="estado">Estado *</Label>
                     <Select
                       value={formData.estado}
-                      onValueChange={(value) => setFormData({ ...formData, estado: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, estado: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
@@ -286,7 +330,9 @@ const PostJob = () => {
                     <Input
                       id="cidade"
                       value={formData.cidade}
-                      onChange={(e) => setFormData({ ...formData, cidade: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, cidade: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -298,7 +344,9 @@ const PostJob = () => {
                     id="address"
                     placeholder="Será exibido apenas após aprovação do candidato"
                     value={formData.address}
-                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, address: e.target.value })
+                    }
                   />
                 </div>
               </div>
@@ -313,10 +361,17 @@ const PostJob = () => {
                       <div key={resource} className="flex items-center gap-2">
                         <Checkbox
                           id={resource}
-                          checked={formData.accessibilityResources.includes(resource)}
-                          onCheckedChange={() => handleAccessibilityToggle(resource)}
+                          checked={formData.accessibilityResources.includes(
+                            resource
+                          )}
+                          onCheckedChange={() =>
+                            handleAccessibilityToggle(resource)
+                          }
                         />
-                        <Label htmlFor={resource} className="font-normal cursor-pointer">
+                        <Label
+                          htmlFor={resource}
+                          className="font-normal cursor-pointer"
+                        >
                           {resource}
                         </Label>
                       </div>
@@ -325,12 +380,19 @@ const PostJob = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="accessibilityInfo">Informações Adicionais sobre Acessibilidade</Label>
+                  <Label htmlFor="accessibilityInfo">
+                    Informações Adicionais sobre Acessibilidade
+                  </Label>
                   <Textarea
                     id="accessibilityInfo"
                     placeholder="Descreva outros recursos ou adaptações específicas para esta vaga"
                     value={formData.accessibilityInfo}
-                    onChange={(e) => setFormData({ ...formData, accessibilityInfo: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        accessibilityInfo: e.target.value,
+                      })
+                    }
                   />
                 </div>
               </div>
@@ -346,7 +408,12 @@ const PostJob = () => {
                       type="number"
                       min="1"
                       value={formData.numberOfVacancies}
-                      onChange={(e) => setFormData({ ...formData, numberOfVacancies: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          numberOfVacancies: e.target.value,
+                        })
+                      }
                       required
                     />
                   </div>
@@ -354,7 +421,9 @@ const PostJob = () => {
                     <Label htmlFor="validity">Validade da Vaga *</Label>
                     <Select
                       value={formData.validity}
-                      onValueChange={(value) => setFormData({ ...formData, validity: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, validity: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
@@ -377,7 +446,10 @@ const PostJob = () => {
                       setFormData({ ...formData, featured: checked as boolean })
                     }
                   />
-                  <Label htmlFor="featured" className="font-normal cursor-pointer">
+                  <Label
+                    htmlFor="featured"
+                    className="font-normal cursor-pointer"
+                  >
                     Destacar esta vaga (aparecerá no topo dos resultados)
                   </Label>
                 </div>
@@ -385,7 +457,12 @@ const PostJob = () => {
             </FormSection>
 
             <div className="flex gap-4">
-              <Button type="button" variant="outline" onClick={() => navigate("/empresa/vagas")} className="flex-1">
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => router.push("/company/Jobs")}
+                className="flex-1"
+              >
                 Cancelar
               </Button>
               <Button type="submit" className="flex-1">
@@ -395,8 +472,6 @@ const PostJob = () => {
           </form>
         </Card>
       </main>
-
-      <Footer />
     </div>
   );
 };

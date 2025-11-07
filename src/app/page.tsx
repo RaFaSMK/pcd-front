@@ -23,13 +23,14 @@ const Index = () => {
               </svg>
             </div>
           </div>
-          
+
           <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
             EQualy
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-center mb-12 opacity-95 max-w-3xl mx-auto">
-            Plataforma acessível e inclusiva conectando talentos PCD às melhores oportunidades
+            Plataforma acessível e inclusiva conectando talentos PCD às melhores
+            oportunidades
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -44,7 +45,7 @@ const Index = () => {
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
-            
+
             <Button
               asChild
               variant={null}
@@ -75,7 +76,8 @@ const Index = () => {
               Inclusão Real
             </h3>
             <p className="text-muted-foreground">
-              Conectamos empresas comprometidas com a diversidade a profissionais PCD qualificados
+              Conectamos empresas comprometidas com a diversidade a
+              profissionais PCD qualificados
             </p>
           </div>
 
@@ -87,7 +89,8 @@ const Index = () => {
               Oportunidades Reais
             </h3>
             <p className="text-muted-foreground">
-              Vagas exclusivas pensadas para valorizar o potencial de cada profissional
+              Vagas exclusivas pensadas para valorizar o potencial de cada
+              profissional
             </p>
           </div>
 
@@ -99,23 +102,12 @@ const Index = () => {
               Acessibilidade Total
             </h3>
             <p className="text-muted-foreground">
-              Plataforma desenvolvida com recursos de acessibilidade para todos os usuários
+              Plataforma desenvolvida com recursos de acessibilidade para todos
+              os usuários
             </p>
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm font-medium mb-2">
-            © 2025 EQualy - Plataforma acessível e inclusiva
-          </p>
-          <p className="text-xs opacity-90">
-            Comprometidos com a acessibilidade e inclusão no mercado de trabalho
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };

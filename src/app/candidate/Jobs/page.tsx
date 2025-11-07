@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Search, SlidersHorizontal } from "lucide-react";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { JobCard } from "@/components/jobs/JobCard";
@@ -27,7 +26,11 @@ const Jobs = () => {
       workMode: "Híbrido",
       contractType: "CLT",
       description: "Buscamos desenvolvedor(a) para criar interfaces acessíveis",
-      accessibilityFeatures: ["Ambiente adaptado", "Tecnologias assistivas", "Horário flexível"],
+      accessibilityFeatures: [
+        "Ambiente adaptado",
+        "Tecnologias assistivas",
+        "Horário flexível",
+      ],
       salaryRange: { min: 5000, max: 7000 },
       logoUrl: "/placeholder.svg",
     },
@@ -39,7 +42,11 @@ const Jobs = () => {
       workMode: "Remoto",
       contractType: "PJ",
       description: "Atendimento e suporte técnico a clientes",
-      accessibilityFeatures: ["100% remoto", "Equipamentos adaptados", "Horário flexível"],
+      accessibilityFeatures: [
+        "100% remoto",
+        "Equipamentos adaptados",
+        "Horário flexível",
+      ],
       salaryRange: { min: 3000, max: 4500 },
       logoUrl: "/placeholder.svg",
     },
@@ -51,7 +58,11 @@ const Jobs = () => {
       workMode: "Híbrido",
       contractType: "CLT",
       description: "Criação de experiências digitais inclusivas",
-      accessibilityFeatures: ["Transporte adaptado", "Intérprete de Libras", "Ambiente acessível"],
+      accessibilityFeatures: [
+        "Transporte adaptado",
+        "Intérprete de Libras",
+        "Ambiente acessível",
+      ],
       salaryRange: { min: 4000, max: 6000 },
       logoUrl: "/placeholder.svg",
     },
@@ -67,11 +78,15 @@ const Jobs = () => {
       <Header variant="candidate" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center text-primary mb-8">VAGAS</h1>
+        <h1 className="text-4xl font-bold text-center text-primary mb-8">
+          VAGAS
+        </h1>
 
         {/* Search Bar */}
         <div className="bg-card rounded-xl shadow-md p-6 mb-8">
-          <h2 className="text-xl font-bold text-foreground mb-4">Encontre sua oportunidade</h2>
+          <h2 className="text-xl font-bold text-foreground mb-4">
+            Encontre sua oportunidade
+          </h2>
           <div className="flex gap-3">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
@@ -124,8 +139,6 @@ const Jobs = () => {
           ))}
         </div>
       </main>
-
-      <Footer />
 
       <FilterModal
         open={showFilters}

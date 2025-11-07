@@ -1,7 +1,6 @@
 import { UserPen, HelpCircle, LogOut } from "lucide-react";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { ProfileOption } from "@/components/profile/ProfileOption";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -19,7 +18,9 @@ const Profile = () => {
       <Header variant="candidate" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center text-primary mb-12">PERFIL</h1>
+        <h1 className="text-4xl font-bold text-center text-primary mb-12">
+          PERFIL
+        </h1>
 
         <div className="max-w-2xl mx-auto space-y-8">
           {/* Profile Header */}
@@ -33,7 +34,9 @@ const Profile = () => {
                   .join("")}
               </AvatarFallback>
             </Avatar>
-            <h2 className="text-2xl font-bold text-foreground mb-1">{user.name}</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-1">
+              {user.name}
+            </h2>
             <p className="text-muted-foreground">Entrou em {user.joinedYear}</p>
           </div>
 
@@ -69,8 +72,6 @@ const Profile = () => {
           <p className="text-center text-sm text-muted-foreground">V.1.0.0</p>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

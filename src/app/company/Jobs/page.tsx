@@ -2,11 +2,17 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { StatsCard } from "@/components/company/StatsCard";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { BarChart3, CheckCircle, MapPin, Briefcase, Edit, Pause } from "lucide-react";
+import {
+  BarChart3,
+  CheckCircle,
+  MapPin,
+  Briefcase,
+  Edit,
+  Pause,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const Jobs = () => {
@@ -52,7 +58,8 @@ const Jobs = () => {
     },
   ];
 
-  const filteredJobs = activeTab === "ativas" ? jobs.filter((j) => j.status === "active") : jobs;
+  const filteredJobs =
+    activeTab === "ativas" ? jobs.filter((j) => j.status === "active") : jobs;
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -60,10 +67,14 @@ const Jobs = () => {
       <Header variant="company" companyName="Irroba E-Commerce" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-primary text-center mb-8">VAGAS</h1>
+        <h1 className="text-4xl font-bold text-primary text-center mb-8">
+          VAGAS
+        </h1>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-bold text-foreground mb-4">Visão Geral</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4">
+            Visão Geral
+          </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <StatsCard
               icon={BarChart3}
@@ -97,7 +108,9 @@ const Jobs = () => {
               Mais Recentes
             </Button>
           </div>
-          <Button onClick={() => router.push("/empresa/postar-vaga")}>+ Nova Vaga</Button>
+          <Button onClick={() => router.push("/empresa/postar-vaga")}>
+            + Nova Vaga
+          </Button>
         </div>
 
         <div className="space-y-6">
@@ -106,9 +119,13 @@ const Jobs = () => {
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-xl font-bold text-primary">{job.title}</h3>
+                    <h3 className="text-xl font-bold text-primary">
+                      {job.title}
+                    </h3>
                     <Badge
-                      variant={job.status === "active" ? "default" : "secondary"}
+                      variant={
+                        job.status === "active" ? "default" : "secondary"
+                      }
                       className={
                         job.status === "active"
                           ? "bg-success/10 text-success hover:bg-success/20"
@@ -142,26 +159,38 @@ const Jobs = () => {
 
               <div className="grid grid-cols-4 gap-4 mb-4">
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-foreground">{job.candidates}</p>
+                  <p className="text-3xl font-bold text-foreground">
+                    {job.candidates}
+                  </p>
                   <p className="text-sm text-muted-foreground">Candidatos</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-foreground">{job.new}</p>
+                  <p className="text-3xl font-bold text-foreground">
+                    {job.new}
+                  </p>
                   <p className="text-sm text-muted-foreground">Novos</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-foreground">{job.inAnalysis}</p>
+                  <p className="text-3xl font-bold text-foreground">
+                    {job.inAnalysis}
+                  </p>
                   <p className="text-sm text-muted-foreground">Em análise</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-foreground">{job.status === "active" ? job.daysRemaining : "-"}</p>
-                  <p className="text-sm text-muted-foreground">{job.status === "active" ? "Dias restantes" : "Pausada"}</p>
+                  <p className="text-3xl font-bold text-foreground">
+                    {job.status === "active" ? job.daysRemaining : "-"}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {job.status === "active" ? "Dias restantes" : "Pausada"}
+                  </p>
                 </div>
               </div>
 
               <Button
                 className="w-full"
-                onClick={() => router.push(`/empresa/vaga/${job.id}/candidatos`)}
+                onClick={() =>
+                  router.push(`/empresa/vaga/${job.id}/candidatos`)
+                }
               >
                 Ver Candidatos
               </Button>
@@ -169,8 +198,6 @@ const Jobs = () => {
           ))}
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

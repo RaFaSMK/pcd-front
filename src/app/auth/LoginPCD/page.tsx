@@ -3,13 +3,12 @@
 import Link from "next/link";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { LoginForm } from "@/components/auth/LoginForm";
-import { Footer } from "@/components/layout/Footer";
 
 const LoginPCD = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <AccessibilityBar />
-      
+
       <header className="py-6 px-4">
         <div className="container mx-auto">
           <Link href={"/"} className="flex items-center gap-2 w-fit">
@@ -37,9 +36,9 @@ const LoginPCD = () => {
             Acessar Conta
           </h1>
 
-          <LoginForm 
-            userType="candidate" 
-            onToggleSignup={() => window.location.href = '/auth/RegisterPCD'}
+          <LoginForm
+            userType="candidate"
+            onToggleSignup={() => (window.location.href = "/auth/RegisterPCD")}
           />
 
           <div className="mt-8 text-center space-y-2">
@@ -52,8 +51,6 @@ const LoginPCD = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

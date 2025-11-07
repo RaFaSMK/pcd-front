@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link"
+import Link from "next/link";
 import { LoginForm } from "@/components/auth/LoginForm";
-import { Footer } from "@/components/layout/Footer";
 
 const LoginEmpresa = () => {
   return (
@@ -20,7 +19,8 @@ const LoginEmpresa = () => {
                 Conecte-se ao talento inclusivo
               </h2>
               <p className="text-lg opacity-90">
-                Encontre profissionais qualificados e construa um ambiente de trabalho mais diverso
+                Encontre profissionais qualificados e construa um ambiente de
+                trabalho mais diverso
               </p>
             </div>
           </div>
@@ -29,7 +29,10 @@ const LoginEmpresa = () => {
         {/* Right side - Form */}
         <div className="w-full lg:w-1/2 flex items-center justify-center px-4 py-12">
           <div className="w-full max-w-md">
-            <Link href={"/"} className="flex items-center gap-2 mb-12 w-fit mx-auto">
+            <Link
+              href={"/"}
+              className="flex items-center gap-2 mb-12 w-fit mx-auto"
+            >
               <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
                 <svg
                   viewBox="0 0 24 24"
@@ -50,9 +53,11 @@ const LoginEmpresa = () => {
               Acessar Conta
             </h1>
 
-            <LoginForm 
+            <LoginForm
               userType="company"
-              onToggleSignup={() => window.location.href = '/auth/RegisterEmpresa'}
+              onToggleSignup={() =>
+                (window.location.href = "/auth/RegisterEmpresa")
+              }
             />
 
             <div className="mt-8 text-center space-y-2">
@@ -72,8 +77,6 @@ const LoginEmpresa = () => {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };

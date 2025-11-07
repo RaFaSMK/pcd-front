@@ -1,7 +1,6 @@
 import { FileText } from "lucide-react";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ApplicationCard } from "@/components/applications/ApplicationCard";
 import { StatsCard } from "@/components/company/StatsCard";
@@ -29,12 +28,20 @@ const Applications = () => {
       <Header variant="candidate" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center text-primary mb-8">APLICAÇÕES</h1>
+        <h1 className="text-4xl font-bold text-center text-primary mb-8">
+          APLICAÇÕES
+        </h1>
 
         {/* Stats */}
         <div className="bg-card rounded-xl shadow-md p-6 mb-8">
-          <h2 className="text-xl font-bold text-foreground mb-4">Resumo das Candidaturas</h2>
-          <StatsCard icon={FileText} value={applications.length} label="Total de Candidaturas" />
+          <h2 className="text-xl font-bold text-foreground mb-4">
+            Resumo das Candidaturas
+          </h2>
+          <StatsCard
+            icon={FileText}
+            value={applications.length}
+            label="Total de Candidaturas"
+          />
         </div>
 
         {/* Filter Buttons */}
@@ -67,8 +74,6 @@ const Applications = () => {
           ))}
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };
