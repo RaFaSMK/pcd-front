@@ -1,6 +1,5 @@
 import { UserPen, HelpCircle, LogOut } from "lucide-react";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
-import { Header } from "@/components/layout/Header";
 import { ProfileOption } from "@/components/profile/ProfileOption";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -15,7 +14,6 @@ const Profile = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <AccessibilityBar />
-      <Header variant="candidate" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center text-primary mb-12">

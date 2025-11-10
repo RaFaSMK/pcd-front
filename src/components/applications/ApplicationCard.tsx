@@ -2,7 +2,7 @@ import { MapPin, Briefcase, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 interface ApplicationCardProps {
   jobTitle: string;
@@ -13,7 +13,7 @@ interface ApplicationCardProps {
   salaryRange?: { min: number; max: number };
   appliedDate: string;
   compatibilityScore: number;
-  logoUrl?: string;
+  logoUrl?: StaticImageData;
   onViewDetails: () => void;
   onCancel?: () => void;
 }
@@ -85,6 +85,8 @@ export const ApplicationCard = ({
               <Image
                 src={logoUrl}
                 alt={`Logo ${company}`}
+                height={24}
+                width={24}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -98,9 +100,8 @@ export const ApplicationCard = ({
 
       <div className="flex gap-3">
         <Button
-          variant="outline"
           onClick={onViewDetails}
-          className="flex-1 font-semibold"
+          className="flex-1 bg-[#715ae2] text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
         >
           Ver Detalhes da Vaga
         </Button>
@@ -108,7 +109,7 @@ export const ApplicationCard = ({
           <Button
             variant="destructive"
             onClick={onCancel}
-            className="font-semibold bg-destructive hover:bg-destructive/90"
+            className="bg-[#715ae2] text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
           >
             Cancelar Candidatura
           </Button>

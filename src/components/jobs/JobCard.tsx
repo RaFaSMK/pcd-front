@@ -128,6 +128,8 @@ export const JobCard = ({
               <Image
                 src={logoUrl}
                 alt={`Logo ${company}`}
+                height={24}
+                width={24}
                 className="w-full h-full object-cover"
               />
             </div>

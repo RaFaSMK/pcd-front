@@ -1,7 +1,8 @@
+"use client";
+
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
-import { Header } from "@/components/layout/Header";
 import { StatsCard } from "@/components/company/StatsCard";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -64,7 +65,6 @@ const Jobs = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <AccessibilityBar />
-      <Header variant="company" companyName="Irroba E-Commerce" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-primary text-center mb-8">

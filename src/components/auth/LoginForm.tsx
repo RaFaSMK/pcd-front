@@ -1,4 +1,4 @@
-"use client"; // Precisa ser client component por causa do useState e useRouter
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation"; // Importa o router do Next.js
@@ -9,7 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { ArrowRight } from "lucide-react";
 
 interface LoginFormProps {
-  userType: 'candidate' | 'company' | 'admin';
+  userType: "candidate" | "company" | "admin";
   onToggleSignup?: () => void;
 }
 
@@ -24,21 +24,21 @@ export const LoginForm = ({ userType, onToggleSignup }: LoginFormProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Substitui navigate() por router.push()
-    if (userType === 'candidate') {
-      router.push('/vagas');
-    } else if (userType === 'company') {
-      router.push('/empresa/vagas');
+    if (userType === "candidate") {
+      router.push("/vagas");
+    } else if (userType === "company") {
+      router.push("/empresa/vagas");
     } else {
-      router.push('/empresa/vagas');
+      router.push("/empresa/vagas");
     }
   };
 
   const handleSignup = () => {
     // Substitui navigate() por router.push()
-    if (userType === 'candidate') {
-      router.push('/cadastro-pcd');
+    if (userType === "candidate") {
+      router.push("/cadastro-pcd");
     } else {
-      router.push('/cadastro-empresa');
+      router.push("/cadastro-empresa");
     }
   };
 
@@ -68,7 +68,9 @@ export const LoginForm = ({ userType, onToggleSignup }: LoginFormProps) => {
           type={showPassword ? "text" : "password"}
           placeholder="Insira seu e-mail" // Corrigi aqui, estava "Insira seu e-mail"
           value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
           required
           className="h-12"
         />
@@ -97,14 +99,17 @@ export const LoginForm = ({ userType, onToggleSignup }: LoginFormProps) => {
         </a>
       </div>
 
-      <Button type="submit" className="w-full h-12 text-base font-semibold" size="lg">
+      <Button
+        type="submit"
+        className="w-full h-12 text-base font-semibold"
+        size="lg"
+      >
         <ArrowRight className="w-5 h-5 mr-2" />
         Entrar
       </Button>
 
       <Button
         type="button"
-        variant="outline"
         className="w-full h-12 text-base font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
         onClick={onToggleSignup || handleSignup}
       >

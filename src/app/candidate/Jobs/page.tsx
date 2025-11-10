@@ -1,7 +1,8 @@
+"use client";
+
 import { useState } from "react";
 import { Search, SlidersHorizontal } from "lucide-react";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
-import { Header } from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { JobCard } from "@/components/jobs/JobCard";
@@ -75,7 +76,6 @@ const Jobs = () => {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <AccessibilityBar />
-      <Header variant="candidate" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center text-primary mb-8">
@@ -83,7 +83,7 @@ const Jobs = () => {
         </h1>
 
         {/* Search Bar */}
-        <div className="bg-card rounded-xl shadow-md p-6 mb-8">
+        <div className="bg-card rounded-xl mb-8">
           <h2 className="text-xl font-bold text-foreground mb-4">
             Encontre sua oportunidade
           </h2>
@@ -110,7 +110,6 @@ const Jobs = () => {
             Vagas Disponíveis ({jobs.length})
           </h2>
           <Button
-            variant="outline"
             onClick={() => setShowFilters(true)}
             className="gap-2 font-semibold"
           >

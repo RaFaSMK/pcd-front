@@ -154,20 +154,10 @@ export const CandidateCard = ({
       </div>
 
       <div className="flex gap-2">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={onViewProfile}
-          className="flex-1"
-        >
+        <Button size="sm" onClick={onViewProfile} className="flex-1">
           Ver Currículo
         </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={onSendMessage}
-          className="flex-1"
-        >
+        <Button size="sm" onClick={onSendMessage} className="flex-1">
           Enviar Mensagem
         </Button>
         <Button variant="destructive" size="sm" onClick={onReject}>

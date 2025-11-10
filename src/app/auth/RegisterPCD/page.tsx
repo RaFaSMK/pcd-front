@@ -7,7 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FormSection } from "@/components/forms/FormSection";
 import { Card } from "@/components/ui/card";
@@ -43,15 +49,19 @@ const RegisterPCD = () => {
   return (
     <div className="min-h-screen bg-background">
       <AccessibilityBar />
-      
+
       <div className="container mx-auto px-4 py-8">
         <Card className="max-w-3xl mx-auto p-8">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-primary/10 mb-4">
               <User className="w-12 h-12 text-primary" />
             </div>
-            <h1 className="text-3xl font-bold text-primary mb-2">Cadastro de Candidato</h1>
-            <p className="text-muted-foreground">Preencha seus dados para criar sua conta</p>
+            <h1 className="text-3xl font-bold text-primary mb-2">
+              Cadastro de Candidato
+            </h1>
+            <p className="text-muted-foreground">
+              Preencha seus dados para criar sua conta
+            </p>
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -62,7 +72,9 @@ const RegisterPCD = () => {
                   <Input
                     id="name"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -74,7 +86,9 @@ const RegisterPCD = () => {
                       id="cpf"
                       placeholder="000.000.000-00"
                       value={formData.cpf}
-                      onChange={(e) => setFormData({ ...formData, cpf: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, cpf: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -84,7 +98,9 @@ const RegisterPCD = () => {
                       id="birthDate"
                       type="date"
                       value={formData.birthDate}
-                      onChange={(e) => setFormData({ ...formData, birthDate: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, birthDate: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -96,7 +112,9 @@ const RegisterPCD = () => {
                     id="email"
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -107,7 +125,9 @@ const RegisterPCD = () => {
                     id="phone"
                     placeholder="(00) 00000-0000"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -120,7 +140,9 @@ const RegisterPCD = () => {
                   <Label htmlFor="disabilityType">Tipo de Deficiência *</Label>
                   <Select
                     value={formData.disabilityType}
-                    onValueChange={(value) => setFormData({ ...formData, disabilityType: value })}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, disabilityType: value })
+                    }
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Selecione" />
@@ -140,7 +162,9 @@ const RegisterPCD = () => {
                   <Input
                     id="cid"
                     value={formData.cid}
-                    onChange={(e) => setFormData({ ...formData, cid: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, cid: e.target.value })
+                    }
                   />
                 </div>
               </div>
@@ -152,7 +176,9 @@ const RegisterPCD = () => {
                   <Label htmlFor="estado">Estado *</Label>
                   <Select
                     value={formData.estado}
-                    onValueChange={(value) => setFormData({ ...formData, estado: value })}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, estado: value })
+                    }
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Selecione" />
@@ -170,7 +196,9 @@ const RegisterPCD = () => {
                   <Input
                     id="cidade"
                     value={formData.cidade}
-                    onChange={(e) => setFormData({ ...formData, cidade: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, cidade: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -183,16 +211,24 @@ const RegisterPCD = () => {
                   <Label htmlFor="education">Escolaridade *</Label>
                   <Select
                     value={formData.education}
-                    onValueChange={(value) => setFormData({ ...formData, education: value })}
+                    onValueChange={(value) =>
+                      setFormData({ ...formData, education: value })
+                    }
                   >
                     <SelectTrigger>
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="fundamental">Ensino Fundamental</SelectItem>
+                      <SelectItem value="fundamental">
+                        Ensino Fundamental
+                      </SelectItem>
                       <SelectItem value="medio">Ensino Médio</SelectItem>
-                      <SelectItem value="superior">Superior Cursando</SelectItem>
-                      <SelectItem value="completo">Superior Completo</SelectItem>
+                      <SelectItem value="superior">
+                        Superior Cursando
+                      </SelectItem>
+                      <SelectItem value="completo">
+                        Superior Completo
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -203,7 +239,9 @@ const RegisterPCD = () => {
                     id="skills"
                     placeholder="Liste suas principais habilidades"
                     value={formData.skills}
-                    onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, skills: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -214,7 +252,9 @@ const RegisterPCD = () => {
                     id="about"
                     placeholder="Conte um pouco sobre sua experiência profissional"
                     value={formData.about}
-                    onChange={(e) => setFormData({ ...formData, about: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, about: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -229,10 +269,14 @@ const RegisterPCD = () => {
                     id="password"
                     type="password"
                     value={formData.password}
-                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, password: e.target.value })
+                    }
                     required
                   />
-                  <p className="text-xs text-muted-foreground mt-1">Mínimo 6 caracteres</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Mínimo 6 caracteres
+                  </p>
                 </div>
 
                 <div>
@@ -241,7 +285,12 @@ const RegisterPCD = () => {
                     id="confirmPassword"
                     type="password"
                     value={formData.confirmPassword}
-                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        confirmPassword: e.target.value,
+                      })
+                    }
                     required
                   />
                 </div>
@@ -257,13 +306,23 @@ const RegisterPCD = () => {
                 }
               />
               <Label htmlFor="terms" className="text-sm">
-                Li e aceito os <span className="text-primary underline cursor-pointer">Termos de Uso</span> e a{" "}
-                <span className="text-primary underline cursor-pointer">Política de Privacidade</span>
+                Li e aceito os{" "}
+                <span className="text-primary underline cursor-pointer">
+                  Termos de Uso
+                </span>{" "}
+                e a{" "}
+                <span className="text-primary underline cursor-pointer">
+                  Política de Privacidade
+                </span>
               </Label>
             </div>
 
             <div className="flex gap-4">
-              <Button type="button" variant="outline" onClick={() => router.push("auth/LoginPCD")} className="flex-1">
+              <Button
+                type="button"
+                onClick={() => router.push("/auth/LoginPCD")}
+                className="flex-1"
+              >
                 Cancelar
               </Button>
               <Button type="submit" className="flex-1">

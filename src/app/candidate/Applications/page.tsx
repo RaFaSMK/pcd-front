@@ -1,9 +1,12 @@
+"use client";
+
 import { FileText } from "lucide-react";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
-import { Header } from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 import { ApplicationCard } from "@/components/applications/ApplicationCard";
 import { StatsCard } from "@/components/company/StatsCard";
+
+import IrrobaLogo from "@/../public/irroba.png";
 
 const Applications = () => {
   // Mock data
@@ -18,22 +21,20 @@ const Applications = () => {
       salaryRange: { min: 5000, max: 7000 },
       appliedDate: "10/01/2025",
       compatibilityScore: 78,
-      logoUrl: "/placeholder.svg",
+      logoUrl: IrrobaLogo, // Depois tem que ver isso
     },
   ];
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <AccessibilityBar />
-      <Header variant="candidate" />
-
       <main className="flex-1 container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-center text-primary mb-8">
           APLICAÇÕES
         </h1>
 
         {/* Stats */}
-        <div className="bg-card rounded-xl shadow-md p-6 mb-8">
+        <div className="bg-card rounded-xl shadow-md mb-8">
           <h2 className="text-xl font-bold text-foreground mb-4">
             Resumo das Candidaturas
           </h2>
@@ -46,10 +47,10 @@ const Applications = () => {
 
         {/* Filter Buttons */}
         <div className="flex gap-3 mb-6">
-          <Button variant="outline" className="font-semibold">
+          <Button className="bg-[#715ae2] text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold">
             Todas as Candidaturas
           </Button>
-          <Button variant="outline" className="font-semibold">
+          <Button className="bg-[#715ae2] text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold">
             Buscar Novas Vagas
           </Button>
         </div>

@@ -38,9 +38,9 @@ const Index = () => {
               asChild
               size="lg"
               variant={null}
-              className="bg-primary-foreground border-2 border-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
+              className="bg-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
             >
-              <Link href={"auth/LoginPCD"}>
+              <Link href={"/auth/LoginPCD"}>
                 Sou Candidato
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
@@ -50,9 +50,9 @@ const Index = () => {
               asChild
               variant={null}
               size="lg"
-              className="bg-primary-foreground border-2 border-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
+              className="bg-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
             >
-              <Link href={"auth/LoginEmpresa"}>
+              <Link href={"/auth/LoginEmpresa"}>
                 Sou Empresa
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>

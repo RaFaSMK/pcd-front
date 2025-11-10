@@ -62,13 +62,13 @@ const LoginEmpresa = () => {
 
             <div className="mt-8 text-center space-y-2">
               <Link
-                href={"auth/LoginPCD"}
+                href={"/auth/LoginPCD"}
                 className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Acessar como candidato
               </Link>
               <Link
-                href={"auth/LoginDev"}
+                href={"/auth/LoginDev"}
                 className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Acessar como Dev

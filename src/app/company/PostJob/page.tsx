@@ -1,7 +1,8 @@
+"use client";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
-import { Header } from "@/components/layout/Header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -85,7 +86,6 @@ const PostJob = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <AccessibilityBar />
-      <Header variant="company" companyName="Irroba E-Commerce" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-primary text-center mb-8">
@@ -459,7 +459,6 @@ const PostJob = () => {
             <div className="flex gap-4">
               <Button
                 type="button"
-                variant="outline"
                 onClick={() => router.push("/company/Jobs")}
                 className="flex-1"
               >

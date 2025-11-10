@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -7,7 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FormSection } from "@/components/forms/FormSection";
 import { Card } from "@/components/ui/card";
@@ -49,15 +55,19 @@ const RegisterEmpresa = () => {
   return (
     <div className="min-h-screen bg-background">
       <AccessibilityBar />
-      
+
       <div className="container mx-auto px-4 py-8">
         <Card className="max-w-3xl mx-auto p-8">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-primary/10 mb-4">
               <Building2 className="w-12 h-12 text-primary" />
             </div>
-            <h1 className="text-3xl font-bold text-primary mb-2">Cadastro de Empresa</h1>
-            <p className="text-muted-foreground">Junte-se à nós na construção de um mercado mais inclusivo</p>
+            <h1 className="text-3xl font-bold text-primary mb-2">
+              Cadastro de Empresa
+            </h1>
+            <p className="text-muted-foreground">
+              Junte-se à nós na construção de um mercado mais inclusivo
+            </p>
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -68,7 +78,9 @@ const RegisterEmpresa = () => {
                   <Input
                     id="razaoSocial"
                     value={formData.razaoSocial}
-                    onChange={(e) => setFormData({ ...formData, razaoSocial: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, razaoSocial: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -78,7 +90,9 @@ const RegisterEmpresa = () => {
                   <Input
                     id="nomeFantasia"
                     value={formData.nomeFantasia}
-                    onChange={(e) => setFormData({ ...formData, nomeFantasia: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, nomeFantasia: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -90,16 +104,25 @@ const RegisterEmpresa = () => {
                       id="cnpj"
                       placeholder="00.000.000/0000-00"
                       value={formData.cnpj}
-                      onChange={(e) => setFormData({ ...formData, cnpj: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, cnpj: e.target.value })
+                      }
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="inscricaoEstadual">Inscrição Estadual</Label>
+                    <Label htmlFor="inscricaoEstadual">
+                      Inscrição Estadual
+                    </Label>
                     <Input
                       id="inscricaoEstadual"
                       value={formData.inscricaoEstadual}
-                      onChange={(e) => setFormData({ ...formData, inscricaoEstadual: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          inscricaoEstadual: e.target.value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -109,7 +132,9 @@ const RegisterEmpresa = () => {
                     <Label htmlFor="porte">Porte da Empresa *</Label>
                     <Select
                       value={formData.porte}
-                      onValueChange={(value) => setFormData({ ...formData, porte: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, porte: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
@@ -126,7 +151,9 @@ const RegisterEmpresa = () => {
                     <Label htmlFor="setor">Setor de Atuação *</Label>
                     <Select
                       value={formData.setor}
-                      onValueChange={(value) => setFormData({ ...formData, setor: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, setor: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
@@ -147,7 +174,9 @@ const RegisterEmpresa = () => {
                     id="sobre"
                     placeholder="Descreva sua empresa e cultura organizacional"
                     value={formData.sobre}
-                    onChange={(e) => setFormData({ ...formData, sobre: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, sobre: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -158,7 +187,9 @@ const RegisterEmpresa = () => {
                     id="site"
                     placeholder="https://www.suaempresa.com.br"
                     value={formData.site}
-                    onChange={(e) => setFormData({ ...formData, site: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, site: e.target.value })
+                    }
                   />
                 </div>
               </div>
@@ -173,7 +204,9 @@ const RegisterEmpresa = () => {
                       id="cep"
                       placeholder="00000-000"
                       value={formData.cep}
-                      onChange={(e) => setFormData({ ...formData, cep: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, cep: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -181,7 +214,9 @@ const RegisterEmpresa = () => {
                     <Label htmlFor="estado">Estado *</Label>
                     <Select
                       value={formData.estado}
-                      onValueChange={(value) => setFormData({ ...formData, estado: value })}
+                      onValueChange={(value) =>
+                        setFormData({ ...formData, estado: value })
+                      }
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="Selecione" />
@@ -200,7 +235,9 @@ const RegisterEmpresa = () => {
                   <Input
                     id="cidade"
                     value={formData.cidade}
-                    onChange={(e) => setFormData({ ...formData, cidade: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, cidade: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -211,7 +248,9 @@ const RegisterEmpresa = () => {
                     id="endereco"
                     placeholder="Insira seu endereço aqui..."
                     value={formData.endereco}
-                    onChange={(e) => setFormData({ ...formData, endereco: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, endereco: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -222,7 +261,9 @@ const RegisterEmpresa = () => {
                     <Input
                       id="numero"
                       value={formData.numero}
-                      onChange={(e) => setFormData({ ...formData, numero: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, numero: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -231,7 +272,9 @@ const RegisterEmpresa = () => {
                     <Input
                       id="bairro"
                       value={formData.bairro}
-                      onChange={(e) => setFormData({ ...formData, bairro: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, bairro: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -240,7 +283,12 @@ const RegisterEmpresa = () => {
                     <Input
                       id="complemento"
                       value={formData.complemento}
-                      onChange={(e) => setFormData({ ...formData, complemento: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          complemento: e.target.value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -254,7 +302,12 @@ const RegisterEmpresa = () => {
                   <Input
                     id="nomeResponsavel"
                     value={formData.nomeResponsavel}
-                    onChange={(e) => setFormData({ ...formData, nomeResponsavel: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        nomeResponsavel: e.target.value,
+                      })
+                    }
                     required
                   />
                 </div>
@@ -266,7 +319,9 @@ const RegisterEmpresa = () => {
                       id="cargo"
                       placeholder="Ex: Gerente de RH"
                       value={formData.cargo}
-                      onChange={(e) => setFormData({ ...formData, cargo: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, cargo: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -276,7 +331,12 @@ const RegisterEmpresa = () => {
                       id="cpfResponsavel"
                       placeholder="000.000.000-00"
                       value={formData.cpfResponsavel}
-                      onChange={(e) => setFormData({ ...formData, cpfResponsavel: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          cpfResponsavel: e.target.value,
+                        })
+                      }
                       required
                     />
                   </div>
@@ -289,7 +349,9 @@ const RegisterEmpresa = () => {
                       id="telefone"
                       placeholder="(00) 0000-0000"
                       value={formData.telefone}
-                      onChange={(e) => setFormData({ ...formData, telefone: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, telefone: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -299,7 +361,9 @@ const RegisterEmpresa = () => {
                       id="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       required
                     />
                   </div>
@@ -315,10 +379,14 @@ const RegisterEmpresa = () => {
                     id="password"
                     type="password"
                     value={formData.password}
-                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, password: e.target.value })
+                    }
                     required
                   />
-                  <p className="text-xs text-muted-foreground mt-1">Mínimo 6 caracteres</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Mínimo 6 caracteres
+                  </p>
                 </div>
 
                 <div>
@@ -327,7 +395,12 @@ const RegisterEmpresa = () => {
                     id="confirmPassword"
                     type="password"
                     value={formData.confirmPassword}
-                    onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        confirmPassword: e.target.value,
+                      })
+                    }
                     required
                   />
                 </div>
@@ -343,13 +416,23 @@ const RegisterEmpresa = () => {
                 }
               />
               <Label htmlFor="terms" className="text-sm">
-                Li e aceito os <span className="text-primary underline cursor-pointer">Termos de Uso</span> e a{" "}
-                <span className="text-primary underline cursor-pointer">Política de Privacidade</span>
+                Li e aceito os{" "}
+                <span className="text-primary underline cursor-pointer">
+                  Termos de Uso
+                </span>{" "}
+                e a{" "}
+                <span className="text-primary underline cursor-pointer">
+                  Política de Privacidade
+                </span>
               </Label>
             </div>
 
             <div className="flex gap-4">
-              <Button type="button" variant="outline" onClick={() => router.push("/login-empresa")} className="flex-1">
+              <Button
+                type="button"
+                onClick={() => router.push("/login-empresa")}
+                className="flex-1"
+              >
                 Cancelar
               </Button>
               <Button type="submit" className="flex-1">

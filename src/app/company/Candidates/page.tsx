@@ -1,7 +1,8 @@
+"use client";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
-import { Header } from "@/components/layout/Header";
 import { StatsCard } from "@/components/company/StatsCard";
 import { CandidateCard } from "@/components/company/CandidateCard";
 import { Button } from "@/components/ui/button";
@@ -71,7 +72,6 @@ const Candidates = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <AccessibilityBar />
-      <Header variant="company" companyName="Irroba E-Commerce" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
         <Button
@@ -145,7 +145,7 @@ const Candidates = () => {
               Mais Recentes
             </Button>
           </div>
-          <Button variant="outline">Exportar Lista</Button>
+          <Button>Exportar Lista</Button>
         </div>
 
         <div className="space-y-6">

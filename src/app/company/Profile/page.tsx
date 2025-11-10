@@ -1,9 +1,12 @@
+"use client";
+
 import { useRouter } from "next/navigation";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
-import { Header } from "@/components/layout/Header";
 import { ProfileOption } from "@/components/profile/ProfileOption";
 import { Button } from "@/components/ui/button";
 import { Edit, HelpCircle } from "lucide-react";
+import IrrobaLogo from "@/../public/irroba.png";
+import Image from "next/image";
 
 const Profile = () => {
   const router = useRouter();
@@ -11,7 +14,6 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <AccessibilityBar />
-      <Header variant="company" companyName="Irroba E-Commerce" />
 
       <main className="flex-1 container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-primary text-center mb-8">
@@ -22,7 +24,12 @@ const Profile = () => {
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-destructive mb-6">
               <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center">
-                <span className="text-destructive text-4xl font-bold">i</span>
+                <Image
+                  src={IrrobaLogo}
+                  height={45}
+                  width={45}
+                  alt="Logo irroba"
+                />
               </div>
             </div>
             <h2 className="text-2xl font-bold text-foreground mb-1">
