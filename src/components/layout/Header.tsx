@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Briefcase, FileText, User } from "lucide-react";
+import Image from "next/image";
+import Logo from "@/../public/logo.png";
 
 interface HeaderProps {
   variant?: "candidate" | "company";
@@ -10,23 +12,11 @@ export const Header = ({ variant = "candidate" }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-50 bg-[#0f1729] text-primary-foreground shadow-md">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-6 h-6 text-primary-foreground"
-            >
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
+        <Link href="/" className="flex items-center">
+          <div className="rounded-full bg-primary-foreground/10 flex items-center justify-center">
+            <Image src={Logo} height={100} width={100} alt="Logo" />
+            <polyline points="20 6 9 17 4 12" />
           </div>
-          <span className="text-xl font-bold text-primary-foreground">
-            EQualy
-          </span>
         </Link>
         <nav className="flex items-center gap-6">
           {variant === "candidate" && (

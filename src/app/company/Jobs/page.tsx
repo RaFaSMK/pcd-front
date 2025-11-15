@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { StatsCard } from "@/components/company/StatsCard";
 import { Button } from "@/components/ui/button";

@@ -14,7 +14,7 @@ interface LoginFormProps {
 }
 
 export const LoginForm = ({ userType, onToggleSignup }: LoginFormProps) => {
-  const router = useRouter(); // Usa o hook do Next.js
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -23,22 +23,20 @@ export const LoginForm = ({ userType, onToggleSignup }: LoginFormProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Substitui navigate() por router.push()
     if (userType === "candidate") {
-      router.push("/vagas");
+      router.push("/candidate/Jobs");
     } else if (userType === "company") {
-      router.push("/empresa/vagas");
+      router.push("/company/Jobs");
     } else {
-      router.push("/empresa/vagas");
+      router.push("/company/Jobs");
     }
   };
 
   const handleSignup = () => {
-    // Substitui navigate() por router.push()
     if (userType === "candidate") {
-      router.push("/cadastro-pcd");
+      router.push("/auth/RegisterPCD");
     } else {
-      router.push("/cadastro-empresa");
+      router.push("/auth/RegisterEmpresa");
     }
   };
 
@@ -110,7 +108,8 @@ export const LoginForm = ({ userType, onToggleSignup }: LoginFormProps) => {
 
       <Button
         type="button"
-        className="w-full h-12 text-base font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+        variant={"default"}
+        className="w-full h-12 text-base font-semibold"
         onClick={onToggleSignup || handleSignup}
       >
         Criar uma nova conta

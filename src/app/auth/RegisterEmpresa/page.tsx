@@ -49,7 +49,7 @@ const RegisterEmpresa = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/empresa/vagas"); // TODO
+    router.push("/company/Jobs");
   };
 
   return (

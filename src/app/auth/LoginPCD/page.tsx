@@ -31,7 +31,7 @@ const LoginPCD = () => {
       </header>
 
       <main className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="w-full max-w-md bg-card rounded-2xl shadow-lg p-8">
+        <div className="w-full max-w-md bg-card rounded-2xl shadow-lg p-8 border border-input">
           <h1 className="text-3xl font-bold text-center mb-8 text-foreground">
             Acessar Conta
           </h1>

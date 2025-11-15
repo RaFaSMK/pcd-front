@@ -37,7 +37,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              variant={null}
+              variant={"outline"}
               className="bg-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
             >
               <Link href={"/auth/LoginPCD"}>
@@ -48,7 +48,7 @@ const Index = () => {
 
             <Button
               asChild
-              variant={null}
+              variant={"outline"}
               size="lg"
               className="bg-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
             >

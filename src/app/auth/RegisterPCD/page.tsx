@@ -43,7 +43,7 @@ const RegisterPCD = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/vagas");
+    router.push("candidate/Jobs");
   };
 
   return (
