@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ApplicationCard } from "@/components/applications/ApplicationCard";
 import { StatsCard } from "@/components/company/StatsCard";
 
-import IrrobaLogo from "@/../public/irroba.png";
+import IrrobaLogo from "../../../../public/irroba.png";
 
 const Applications = () => {
   // Mock data

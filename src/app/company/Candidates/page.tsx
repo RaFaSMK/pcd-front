@@ -76,7 +76,7 @@ const Candidates = () => {
       <main className="flex-1 container mx-auto px-4 py-8">
         <Button
           variant="ghost"
-          onClick={() => router.push("/company/jobs")}
+          onClick={() => router.push("/company/Jobs")}
           className="mb-4"
         >
           <ChevronLeft className="w-4 h-4 mr-2" />

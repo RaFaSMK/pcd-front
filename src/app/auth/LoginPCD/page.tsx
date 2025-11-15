@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { LoginForm } from "@/components/auth/LoginForm";
 
 const LoginPCD = () => {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <AccessibilityBar />
@@ -38,7 +41,7 @@ const LoginPCD = () => {
 
           <LoginForm
             userType="candidate"
-            onToggleSignup={() => (window.location.href = "/auth/RegisterPCD")}
+            onToggleSignup={() => router.push("/auth/RegisterPCD")}
           />
 
           <div className="mt-8 text-center space-y-2">

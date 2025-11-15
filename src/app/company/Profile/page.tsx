@@ -5,7 +5,8 @@ import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { ProfileOption } from "@/components/profile/ProfileOption";
 import { Button } from "@/components/ui/button";
 import { Edit, HelpCircle } from "lucide-react";
-import IrrobaLogo from "@/../public/irroba.png";
+import { Header } from "@/components/layout/Header";
+import IrrobaLogo from "../../../../public/irroba.png";
 import Image from "next/image";
 
 const Profile = () => {

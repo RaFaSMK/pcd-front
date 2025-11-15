@@ -108,7 +108,7 @@ const Jobs = () => {
               Mais Recentes
             </Button>
           </div>
-          <Button onClick={() => router.push("/empresa/postar-vaga")}>
+          <Button onClick={() => router.push("/company/PostJob")}>
             + Nova Vaga
           </Button>
         </div>
@@ -188,9 +188,7 @@ const Jobs = () => {
 
               <Button
                 className="w-full"
-                onClick={() =>
-                  router.push(`/empresa/vaga/${job.id}/candidatos`)
-                }
+                onClick={() => router.push("/company/Candidates")}
               >
                 Ver Candidatos
               </Button>

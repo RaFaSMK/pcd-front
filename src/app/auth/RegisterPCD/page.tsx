@@ -43,7 +43,7 @@ const RegisterPCD = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("candidate/Jobs");
+    router.push("/candidate/Jobs");
   };
 
   return (
@@ -335,7 +335,7 @@ const RegisterPCD = () => {
                 Já tem uma conta?{" "}
                 <button
                   type="button"
-                  onClick={() => router.push("auth/RegisterPCD")}
+                  onClick={() => router.push("/auth/LoginPCD")}
                   className="text-primary font-semibold hover:underline"
                 >
                   Fazer login
@@ -345,7 +345,7 @@ const RegisterPCD = () => {
                 É uma empresa?{" "}
                 <button
                   type="button"
-                  onClick={() => router.push("auth/RegisterEmpresa")}
+                  onClick={() => router.push("/auth/RegisterEmpresa")}
                   className="text-primary font-semibold hover:underline"
                 >
                   Cadastre-se aqui

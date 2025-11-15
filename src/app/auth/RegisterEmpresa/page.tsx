@@ -430,7 +430,7 @@ const RegisterEmpresa = () => {
             <div className="flex gap-4">
               <Button
                 type="button"
-                onClick={() => router.push("/login-empresa")}
+                onClick={() => router.push("/auth/LoginEmpresa")}
                 className="flex-1"
               >
                 Cancelar

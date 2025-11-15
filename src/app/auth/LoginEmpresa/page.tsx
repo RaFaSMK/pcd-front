@@ -1,9 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { LoginForm } from "@/components/auth/LoginForm";
 
 const LoginEmpresa = () => {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <main className="flex-1 flex">
@@ -55,9 +58,7 @@ const LoginEmpresa = () => {
 
             <LoginForm
               userType="company"
-              onToggleSignup={() =>
-                (window.location.href = "/auth/RegisterEmpresa")
-              }
+              onToggleSignup={() => router.push("/auth/RegisterEmpresa")}
             />
 
             <div className="mt-8 text-center space-y-2">

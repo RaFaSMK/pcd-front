@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Briefcase, FileText, User } from "lucide-react";
 import Image from "next/image";
-import Logo from "@/../public/logo.png";
+import Logo from "../../../public/logo.png";
 
 interface HeaderProps {
   variant?: "candidate" | "company";
@@ -15,7 +15,6 @@ export const Header = ({ variant = "candidate" }: HeaderProps) => {
         <Link href="/" className="flex items-center">
           <div className="rounded-full bg-primary-foreground/10 flex items-center justify-center">
             <Image src={Logo} height={100} width={100} alt="Logo" />
-            <polyline points="20 6 9 17 4 12" />
           </div>
         </Link>
         <nav className="flex items-center gap-6">

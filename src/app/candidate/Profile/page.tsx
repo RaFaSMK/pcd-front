@@ -1,3 +1,5 @@
+"use client";
+
 import { UserPen, HelpCircle, LogOut } from "lucide-react";
 import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 import { ProfileOption } from "@/components/profile/ProfileOption";
