@@ -13,7 +13,7 @@
 
   --primary: hsl(250 70% 62%);
   --primary-foreground: hsl(0 0% 100%);
-  --primary-hover: hsl(250 70% 55%);
+  --primary-hover: hsl(250 70% 50%);
 
   --secondary: hsl(223 40% 88%);
   --secondary-foreground: hsl(222 47% 11%);
@@ -48,50 +48,52 @@
 }
 
 /* 🌙 Dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: hsl(222 47% 11%);
-    --foreground: hsl(0 0% 98%);
+.dark {
+  --background: hsl(222 47% 11%);
+  --foreground: hsl(0 0% 98%);
 
-    --card: hsl(222 40% 15%);
-    --card-foreground: hsl(0 0% 98%);
+  --card: hsl(222 40% 15%);
+  --card-foreground: hsl(0 0% 98%);
 
-    --popover: hsl(222 40% 15%);
-    --popover-foreground: hsl(0 0% 98%);
+  --popover: hsl(222 40% 15%);
+  --popover-foreground: hsl(0 0% 98%);
 
-    --primary: hsl(250 70% 62%);
-    --primary-foreground: hsl(0 0% 100%);
-    --primary-hover: hsl(250 70% 55%);
+  --primary: hsl(250 70% 62%);
+  --primary-foreground: hsl(0 0% 100%);
+  --primary-hover: hsl(0 0% 100%);
 
-    --secondary: hsl(222 40% 20%);
-    --secondary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(222 40% 20%);
+  --secondary-foreground: hsl(0 0% 98%);
 
-    --muted: hsl(222 30% 25%);
-    --muted-foreground: hsl(0 0% 65%);
+  --muted: hsl(222 30% 25%);
+  --muted-foreground: hsl(0 0% 65%);
 
-    --accent: hsl(250 70% 62%);
-    --accent-foreground: hsl(0 0% 100%);
+  --accent: hsl(250 70% 62%);
+  --accent-foreground: hsl(0 0% 100%);
 
-    --destructive: hsl(0 62% 50%);
-    --destructive-foreground: hsl(0 0% 98%);
+  --destructive: hsl(0 62% 50%);
+  --destructive-foreground: hsl(0 0% 98%);
 
-    --border: hsl(222 30% 25%);
-    --input: hsl(222 30% 25%);
-    --ring: hsl(250 70% 62%);
+  --border: hsl(222 30% 25%);
+  --input: hsl(222 30% 25%);
+  --ring: hsl(250 70% 62%);
 
-    --success: hsl(142 71% 45%);
-    --warning: hsl(38 92% 50%);
-    --info: hsl(199 89% 48%);
+  --success: hsl(142 71% 45%);
+  --warning: hsl(38 92% 50%);
+  --info: hsl(199 89% 48%);
 
-    --sidebar-background: hsl(240 5.9% 10%);
-    --sidebar-foreground: hsl(240 4.8% 95.9%);
-    --sidebar-primary: hsl(224.3 76.3% 48%);
-    --sidebar-primary-foreground: hsl(0 0% 100%);
-    --sidebar-accent: hsl(240 3.7% 15.9%);
-    --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
-    --sidebar-border: hsl(240 3.7% 15.9%);
-    --sidebar-ring: hsl(217.2 91.2% 59.8%);
-  }
+  --sidebar-background: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(0 0% 98%);
+  --sidebar-primary-foreground: hsl(240 5.9% 10%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+.dark button[type="submit"].bg-primary.text-primary-foreground:hover {
+  color: var(--primary) !important;
 }
 
 /* ⚡ High Contrast Mode */
@@ -142,6 +144,52 @@
   }
 }
 
+/* ♿ High Contrast toggle via class (AccessibilityBar) */
+.high-contrast {
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(0 0% 100%);
+
+  --card: hsl(0 0% 0%);
+  --card-foreground: hsl(0 0% 100%);
+
+  --popover: hsl(0 0% 0%);
+  --popover-foreground: hsl(0 0% 100%);
+
+  --primary: hsl(60 100% 50%);
+  --primary-foreground: hsl(0 0% 0%);
+  --primary-hover: hsl(60 100% 40%);
+
+  --secondary: hsl(0 0% 20%);
+  --secondary-foreground: hsl(0 0% 100%);
+
+  --muted: hsl(0 0% 15%);
+  --muted-foreground: hsl(0 0% 85%);
+
+  --accent: hsl(60 100% 50%);
+  --accent-foreground: hsl(0 0% 0%);
+
+  --destructive: hsl(0 100% 50%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --border: hsl(0 0% 100%);
+  --input: hsl(0 0% 100%);
+  --ring: hsl(60 100% 50%);
+
+  --success: hsl(120 100% 40%);
+  --warning: hsl(48 100% 50%);
+  --info: hsl(200 100% 50%);
+}
+
+.high-contrast * {
+  border-width: 2px !important;
+  font-weight: 600 !important;
+}
+
+.high-contrast button,
+.high-contrast a {
+  text-decoration: underline;
+}
+
 /* 💅 Ligação com Tailwind Theme */
 @theme inline {
   /* 🎨 Cores principais */
@@ -150,6 +198,7 @@
 
   /* 🟣 Primária + Hover */
   --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   --color-primary-hover: var(--primary-hover);
 
   /* 🔵 Secundária */
@@ -161,7 +210,6 @@
   --color-border: var(--border);
   --radius-md: var(--radius);
 }
-
 
 /* 🧍 Base Styles */
 body {

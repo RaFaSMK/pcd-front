@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { LoginForm } from "@/components/auth/LoginForm";
+import { Button } from "@/components/ui/button";
 
 const LoginEmpresa = () => {
   const router = useRouter();
@@ -36,19 +37,19 @@ const LoginEmpresa = () => {
               href={"/"}
               className="flex items-center gap-2 mb-12 w-fit mx-auto"
             >
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-7 h-7 text-primary-foreground"
-                >
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#8b5cf6"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-10 h-10"
+              >
+                <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+                <path d="m9 11 3 3L22 4" />
+              </svg>
               <span className="text-2xl font-bold text-foreground">EQualy</span>
             </Link>
 
@@ -61,19 +62,21 @@ const LoginEmpresa = () => {
               onToggleSignup={() => router.push("/auth/RegisterEmpresa")}
             />
 
-            <div className="mt-8 text-center space-y-2">
-              <Link
-                href={"/auth/LoginPCD"}
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+            <div className="mt-8 space-y-3">
+              <Button
+                asChild
+                className="w-full h-12 text-base font-semibold"
+                size="lg"
               >
-                Acessar como candidato
-              </Link>
-              <Link
-                href={"/auth/LoginDev"}
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+                <Link href={"/auth/LoginPCD"}>Acessar como candidato</Link>
+              </Button>
+              <Button
+                asChild
+                className="w-full h-12 text-base font-semibold"
+                size="lg"
               >
-                Acessar como Dev
-              </Link>
+                <Link href={"/auth/LoginDev"}>Acessar como Dev</Link>
+              </Button>
             </div>
           </div>
         </div>

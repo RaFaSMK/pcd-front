@@ -1,34 +1,36 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Briefcase, Heart } from "lucide-react";
+import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <AccessibilityBar />
       {/* Hero Section */}
       <div className="bg-linear-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground">
         <div className="container mx-auto px-4 py-20">
           <div className="flex items-center justify-center mb-8">
-            <div className="w-20 h-20 rounded-full bg-primary-foreground/10 backdrop-blur-sm flex items-center justify-center">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-12 h-12"
-              >
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-20 h-20"
+            >
+              <path d="M21.801 10A10 10 0 1 1 17 3.335" />
+              <path d="m9 11 3 3L22 4" />
+            </svg>
           </div>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-center mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-center mb-6 text-white">
             EQualy
           </h1>
 
-          <p className="text-xl md:text-2xl text-center mb-12 opacity-95 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-center mb-12 text-white/95 max-w-3xl mx-auto">
             Plataforma acessível e inclusiva conectando talentos PCD às melhores
             oportunidades
           </p>
@@ -38,7 +40,7 @@ const Index = () => {
               asChild
               size="lg"
               variant={"outline"}
-              className="bg-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
+              className="bg-transparent text-white hover:bg-white/30 dark:hover:bg-white dark:hover:text-primary border-2 border-white h-14 px-8 text-lg font-semibold transition-all"
             >
               <Link href={"/auth/LoginPCD"}>
                 Sou Candidato
@@ -50,7 +52,7 @@ const Index = () => {
               asChild
               variant={"outline"}
               size="lg"
-              className="bg-primary-foreground text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
+              className="bg-transparent text-white hover:bg-white/30 dark:hover:bg-white dark:hover:text-primary border-2 border-white h-14 px-8 text-lg font-semibold transition-all"
             >
               <Link href={"/auth/LoginEmpresa"}>
                 Sou Empresa

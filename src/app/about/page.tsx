@@ -1,6 +1,11 @@
+"use client";
+
+import { AccessibilityBar } from "@/components/accessibility/AccessibilityBar";
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
+      <AccessibilityBar />
       <div className="container mx-auto px-4 py-20">
         <h1 className="text-4xl font-bold text-center mb-8 text-foreground">
           Sobre a EQualy

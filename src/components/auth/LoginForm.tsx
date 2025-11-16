@@ -107,9 +107,9 @@ export const LoginForm = ({ userType, onToggleSignup }: LoginFormProps) => {
       </Button>
 
       <Button
-        type="button"
-        variant={"default"}
+        type="submit"
         className="w-full h-12 text-base font-semibold"
+        size="lg"
         onClick={onToggleSignup || handleSignup}
       >
         Criar uma nova conta
