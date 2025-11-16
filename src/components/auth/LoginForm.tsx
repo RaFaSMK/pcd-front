@@ -89,12 +89,14 @@ export const LoginForm = ({ userType, onToggleSignup }: LoginFormProps) => {
       </div>
 
       <div className="text-center">
-        <a
-          href="#"
-          className="text-sm text-foreground hover:text-primary underline transition-colors"
+        <Button
+          type="button"
+          variant="link"
+          className="text-sm h-auto p-0 font-medium"
+          onClick={() => console.log("Recuperar senha")}
         >
           Esqueci minha senha
-        </a>
+        </Button>
       </div>
 
       <Button
@@ -107,7 +109,7 @@ export const LoginForm = ({ userType, onToggleSignup }: LoginFormProps) => {
       </Button>
 
       <Button
-        type="submit"
+        type="button"
         className="w-full h-12 text-base font-semibold"
         size="lg"
         onClick={onToggleSignup || handleSignup}

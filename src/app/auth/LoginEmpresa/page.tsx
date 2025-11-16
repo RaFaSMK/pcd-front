@@ -64,14 +64,14 @@ const LoginEmpresa = () => {
 
             <div className="mt-8 space-y-3">
               <Button
-                asChild
+                type="submit"
                 className="w-full h-12 text-base font-semibold"
                 size="lg"
               >
                 <Link href={"/auth/LoginPCD"}>Acessar como candidato</Link>
               </Button>
               <Button
-                asChild
+                type="submit"
                 className="w-full h-12 text-base font-semibold"
                 size="lg"
               >
