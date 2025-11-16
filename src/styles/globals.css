@@ -92,7 +92,7 @@
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
-.dark button[type="submit"].bg-primary.text-primary-foreground:hover {
+.dark button.bg-primary.text-primary-foreground:hover {
   color: var(--primary) !important;
 }
 

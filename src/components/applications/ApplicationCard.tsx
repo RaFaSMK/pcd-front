@@ -101,15 +101,14 @@ export const ApplicationCard = ({
       <div className="flex gap-3">
         <Button
           onClick={onViewDetails}
-          className="flex-1 bg-[#715ae2] text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
+          className="flex-1 text-base font-semibold h-14 px-8"
         >
           Ver Detalhes da Vaga
         </Button>
         {onCancel && (
           <Button
-            variant="destructive"
             onClick={onCancel}
-            className="bg-[#715ae2] text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold"
+            className="text-base font-semibold h-14 px-8"
           >
             Cancelar Candidatura
           </Button>

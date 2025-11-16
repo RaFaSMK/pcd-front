@@ -47,10 +47,10 @@ const Applications = () => {
 
         {/* Filter Buttons */}
         <div className="flex gap-3 mb-6">
-          <Button className="bg-[#715ae2] text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold">
+          <Button className="text-base font-semibold h-14 px-8">
             Todas as Candidaturas
           </Button>
-          <Button className="bg-[#715ae2] text-primary-foreground hover:bg-white hover:text-primary h-14 px-8 text-lg font-semibold">
+          <Button className="text-base font-semibold h-14 px-8">
             Buscar Novas Vagas
           </Button>
         </div>

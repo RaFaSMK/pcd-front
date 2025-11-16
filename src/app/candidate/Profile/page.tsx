@@ -58,15 +58,17 @@ const Profile = () => {
           </div>
 
           {/* Logout Button */}
-          <Button
-            variant="default"
-            size="lg"
-            className="w-full max-w-md mx-auto block h-14 text-base font-semibold"
-            onClick={() => console.log("Logout")}
-          >
-            <LogOut className="w-5 h-5 mr-2" />
-            Sair da conta
-          </Button>
+          <div className="flex justify-center">
+            <Button
+              variant="default"
+              size="lg"
+              className="w-full max-w-sm h-14 text-base font-semibold"
+              onClick={() => console.log("Logout")}
+            >
+              <LogOut className="w-5 h-5" />
+              Sair da conta
+            </Button>
+          </div>
 
           {/* Version */}
           <p className="text-center text-sm text-muted-foreground">V.1.0.0</p>
